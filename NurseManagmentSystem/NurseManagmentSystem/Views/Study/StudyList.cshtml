@@ -1,0 +1,186 @@
+﻿@model IEnumerable<NurseManagmentSystem.Models.Study>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="row">
+    <div class="col-12 m-3">
+        <a asp-action="CreateStudy" class="btn btn-primary">Add New</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.patient.fullname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.device.serialNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.startTime)
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.patient.fullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.device.serialNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startTime)
+                            @Html.DisplayFor(modelItem => item.heartRates.Count)
+
+
+                        </td>
+                        <td>
+                            @if (item.duration == 0)
+                            {
+                                <p class="text-danger">Ended</p>
+                            }
+                            @if (item.duration == 1)
+                            {
+                                <p class="text-success">OnGoing</p>
+                            }
+
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-primary open-chart" data-toggle="modal" data-id="@item.id" data-target="#heartRateModel">View Graph</a> |
+
+                        </td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="heartRateModel" tabindex="-1" role="dialog" aria-labelledby="heartRateModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Heart Rate Graph</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-action="AddComment">
+                <div class="modal-body">
+                    <div id="container"></div>
+                    <input type="hidden" name="sId" id="sId"/>
+                    <input class="form-control" id="comment" type="text" name="comment" placeholder="add comment" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input id="Add" type="submit" value="Add" class="btn btn-primary" />
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<script>
+    
+    $(document).on("click", ".open-chart", function () {
+        var studyId = $(this).data('id');
+        document.getElementById("sId").value = studyId;
+        //console.log(studyId);
+        $.getJSON("/Study/ChartHeartRate/", { id: studyId }, function (data) {
+            var rates = [];
+            for (var i = 0; i < data.length; i++) {
+                rates.push(data[i].hr);
+                //console.log(data[i].hr);
+            }
+            Highcharts.chart('container', {
+
+                title: {
+                    text: 'Chart Heart Rate'
+                },
+
+                subtitle: {
+                    text: 'Chart Heart Rate'
+                },
+
+                yAxis: {
+                    title: {
+                        text: ''
+                    }
+                },
+
+                xAxis: {
+                    accessibility: {
+                        rangeDescription: 'Range: 12 to 12'
+                    }
+                },
+
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+
+                plotOptions: {
+                    series: {
+                        label: {
+                            connectorAllowed: false
+                        },
+                        pointStart: 0
+                    }
+                },
+
+                series: [{
+                    name: 'Heart Rate',
+                    data: rates
+                }, ],
+
+               
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                layout: 'horizontal',
+                                align: 'center',
+                                verticalAlign: 'bottom'
+                            }
+                        }
+                    }]
+                }
+
+            }
+            );
+        });
+
+    });
+    
+</script>
+   
+}
