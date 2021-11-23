@@ -27,9 +27,9 @@ namespace NurseManagmentSystem.DAL.Repositories
         }
 
         override
-        public  bool UniqueData(string value)
+        public  bool UniqueData(string value, int id)
         {
-            var device = _applicationContext.devices.Where(d => d.serialNumber == value).FirstOrDefault();
+            var device = _applicationContext.devices.Where(d => d.serialNumber == value).Where(d => d.id != id).FirstOrDefault();
             if(device == null)
             {
                 return true;

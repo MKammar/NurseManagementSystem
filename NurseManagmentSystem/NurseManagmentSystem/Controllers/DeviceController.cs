@@ -42,7 +42,7 @@ namespace NurseManagmentSystem.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             device.nurseId = userId;
 
-            var isUnique = _device.UniqueData(device.serialNumber);
+            var isUnique = _device.UniqueData(device.serialNumber, device.id);
             if (ModelState.IsValid && isUnique)
             {
                 _device.Create(device);
@@ -76,7 +76,7 @@ namespace NurseManagmentSystem.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             device.nurseId = userId;
 
-            var isUnique = _device.UniqueData(device.serialNumber);
+            var isUnique = _device.UniqueData(device.serialNumber, device.id);
             if (ModelState.IsValid && isUnique)
             {
                 _device.Update(device);

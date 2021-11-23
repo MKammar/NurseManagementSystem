@@ -63,7 +63,7 @@ namespace NurseManagmentSystem.DAL.Repositories
             throw new NotImplementedException();
         }
 
-        public virtual bool UniqueData(string value)
+        public virtual bool UniqueData(string value, int id)
         {
             throw new NotImplementedException();
         }

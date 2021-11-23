@@ -16,6 +16,6 @@ namespace NurseManagmentSystem.DAL.Contracts
         TEntity GetById(int id);
         List<TEntity> GetNotifications(string userId);
         void ReadNotification(int notificationId, string userId);
-        Boolean UniqueData(string value);
+        Boolean UniqueData(string value, int id);
     }
 }

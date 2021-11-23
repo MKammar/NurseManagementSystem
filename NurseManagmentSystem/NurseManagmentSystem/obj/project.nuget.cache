@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mNe4ksUmFYuSAhy2s9qGOLXw/3Q9fxGoew17SNxGeX8YYHqstUN8ZtA7tUKuJe1f4Fp6SatAgl89ij67V/cJSQ==",
+  "dgSpecHash": "gKZl7JQDaToQEn+t+l2z1FgQmYka3sqnZ0nIfJ5uDjDaE17o0F+RS1pTJY+QgseExSoUNlvKDtTjwgsm6TLKVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj",
+  "projectFilePath": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystemGit\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ammar\\.nuget\\packages\\csvhelper\\27.2.0\\csvhelper.27.2.0.nupkg.sha512",
     "C:\\Users\\ammar\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj": {}
+    "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystemGit\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj": {
+    "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystemGit\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj",
+        "projectUniqueName": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystemGit\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj",
         "projectName": "NurseManagmentSystem",
-        "projectPath": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj",
+        "projectPath": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystemGit\\NurseManagmentSystem\\NurseManagmentSystem\\NurseManagmentSystem.csproj",
         "packagesPath": "C:\\Users\\ammar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystem\\NurseManagmentSystem\\obj\\",
+        "outputPath": "C:\\Users\\ammar\\OneDrive\\Documents\\files for me\\cardio test\\NurseManagmentSystemGit\\NurseManagmentSystem\\NurseManagmentSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ammar\\AppData\\Roaming\\NuGet\\NuGet.Config",
